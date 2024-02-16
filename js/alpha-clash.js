@@ -1,3 +1,4 @@
+
 function handleKeyboardButtonPrees(event) {
     const playerPressed = event.key;
     const caurrentAlphabetElement = document.getElementById('current-alphabet')
@@ -6,12 +7,17 @@ function handleKeyboardButtonPrees(event) {
     console.log(playerPressed, expectedAlphabet);
 
     if (playerPressed === expectedAlphabet) {
-        console.log('Gaot a poin');
+        const caurrentScore = getTextElementValueById('score')
+        const newScore = caurrentScore + 1 ;
+        setTextElementValueById('score', newScore)
+
+        removeBgColorById(expectedAlphabet);
         continueGame();
-        removeBgColorById(expectedAlphabet)
     }
     else{
-        console.log('die');
+        const caurrentLife = getTextElementValueById('life')
+        const newLife = caurrentLife - 1
+        setTextElementValueById('life', newLife);
     }
  }
 

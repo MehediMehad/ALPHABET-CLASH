@@ -24,4 +24,14 @@ function removeBgColorById(elementId) {
     const index = Math.round(rendomNumber)
     const alphabet = alphabets[index]; 
     return alphabet;
- } 
+ }
+ function getTextElementValueById(elementId) {
+    const element = document.getElementById(elementId);
+    const elementValueText = element.innerText;
+    const elementValue = parseInt(elementValueText);
+    return elementValue;
+ }
+ function setTextElementValueById(elementId, value) {
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+ }
